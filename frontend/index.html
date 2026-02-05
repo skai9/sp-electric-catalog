@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SP Electric Smart Search</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Smart Search</h1>
+        <p>Catalogo SP Electric — Febbraio 2026</p>
+      </header>
+
+      <section class="search">
+        <input id="searchInput" type="text" placeholder="Cerca per codice o nome" autocomplete="off" />
+        <span id="searchHint">Digita almeno 2 caratteri</span>
+      </section>
+
+      <section class="results">
+        <div class="results-meta" id="resultsMeta">Nessun risultato</div>
+        <ul id="resultsList" class="results-list"></ul>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
