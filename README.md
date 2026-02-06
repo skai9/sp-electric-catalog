@@ -30,3 +30,4 @@ Apri `frontend/index.html` per la UI.
 ## Note
 - Il build effettua un controllo incrociato CSV/XLSX e genera `backend/data/inconsistencies.json` se trova differenze.
 - Il PDF viene letto come riferimento descrittivo.
+
