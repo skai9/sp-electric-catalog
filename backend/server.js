@@ -47,6 +47,11 @@ app.get("/health", (_req, res) => {
   res.json({ status: "ok", products: products.length });
 });
 
+// Servire index.html per tutte le altre route
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(__dirname, "..", "index.html"));
+});
+
 app.listen(PORT, () => {
   console.log(`Smart Search backend listening on http://localhost:${PORT}`);
 });
