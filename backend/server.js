@@ -34,6 +34,9 @@ function refreshProducts() {
 
 refreshProducts();
 
+// Servire i file statici del frontend
+app.use(express.static(path.join(__dirname, "..")));
+
 app.get("/search", (req, res) => {
   const query = String(req.query.q || "").trim();
   const results = searchProducts(products, query);

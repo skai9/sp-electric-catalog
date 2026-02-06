@@ -3,37 +3,82 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SP Electric Smart Search</title>
+    <title>SP Electric - Ricerca Prodotti</title>
     <link rel="stylesheet" href="frontend/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div class="app">
+    <div class="container">
+      <!-- Header con Carrello -->
       <header class="header">
-        <h1>Smart Search</h1>
-        <p>Catalogo SP Electric — Febbraio 2026</p>
+        <div class="header-content">
+          <div class="header-title">
+            <h1>⚡ SP Electric</h1>
+            <p class="subtitle">Catalogo Prodotti Febbraio 2026</p>
+          </div>
+          <button id="cartToggle" class="cart-toggle">
+            🛒 Carrello
+            <span id="cartBadge" class="cart-badge-header">0</span>
+          </button>
+        </div>
       </header>
 
-      <section class="search">
-        <input id="searchInput" type="text" placeholder="Cerca per codice o nome" autocomplete="off" />
-        <span id="searchHint">Digita almeno 2 caratteri</span>
-      </section>
-
-      <section class="results">
-        <div class="results-meta" id="resultsMeta">Nessun risultato</div>
-        <ul id="resultsList" class="results-list"></ul>
-      </section>
-
-      <section class="cart" id="cartSection">
-        <div class="cart-header">
-          <h2>Carrello</h2>
-          <span class="cart-count" id="cartCount">0 prodotti</span>
+      <!-- Pannello Carrello (nascosto di default) -->
+      <div id="cartPanel" class="cart-panel">
+        <div class="cart-panel-header">
+          <h3>🛒 Carrello</h3>
+          <button id="closeCart" class="close-cart">✕</button>
         </div>
-        <ul id="cartList" class="cart-list"></ul>
-        <div class="cart-actions" id="cartActions">
-          <button id="sendOrderBtn" class="send-order-btn">Invia ordine via WhatsApp</button>
+        
+        <div id="cartItems" class="cart-items"></div>
+        
+        <div class="cart-total" id="cartTotal" style="display: none;">
+          <div class="total-label">Totale:</div>
+          <div class="total-amount" id="totalAmount">€ 0,00</div>
         </div>
-      </section>
+        
+        <div class="cart-footer">
+          <button id="clearCart" class="btn-secondary">🗑️ Svuota Carrello</button>
+          <button id="sendEmailBtn" class="btn-secondary">📧 Invia Email</button>
+          <button id="sendOrderBtn" class="btn-primary">📱 Invia Ordine WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- Ricerca -->
+      <div class="search-section">
+        <div class="search-wrapper">
+          <input 
+            id="searchInput" 
+            type="text" 
+            class="search-input"
+            placeholder="🔍 Cerca prodotto per codice o nome..." 
+            autocomplete="off"
+            autofocus
+          />
+          <button id="clearSearch" class="clear-search" style="display: none;">✕</button>
+        </div>
+        <p id="searchHint" class="search-hint">Digita almeno 2 caratteri per cercare</p>
+      </div>
+
+      <!-- Risultati -->
+      <div class="results-section">
+        <div class="section-header">
+          <h2 id="resultsMeta">Inizia a cercare prodotti</h2>
+        </div>
+        <div id="resultsList" class="results-list">
+          <div style="text-align:center;padding:60px 20px;">
+            <div style="font-size:64px;margin-bottom:16px;">🔍</div>
+            <p style="color:var(--gray-700);font-size:18px;margin:0;font-weight:600;">Cerca prodotti per codice o descrizione</p>
+            <p style="color:var(--gray-500);font-size:14px;margin-top:12px;">Digita almeno 2 caratteri per iniziare</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Notifiche -->
+    <div id="toastContainer" class="toast-container"></div>
 
     <script src="frontend/app.js"></script>
   </body>
