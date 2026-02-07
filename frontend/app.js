@@ -23,8 +23,8 @@ const API_URL = window.location.origin + "/search";
 const HEALTH_URL = window.location.origin + "/health";
 const WHATSAPP_NUMBER = "393355994614";
 const EMAIL_ADDRESS = "m.ballicu@sp-electric.it";
-const SEARCH_MIN_LENGTH = 2;
-const SEARCH_DEBOUNCE_MS = 150;
+const SEARCH_MIN_LENGTH = 2; // Ricerca predittiva da 2 caratteri
+const SEARCH_DEBOUNCE_MS = 80; // Ultra-rapido (stile Google)
 const MAX_RETRIES = 2;
 
 // ==========================================
